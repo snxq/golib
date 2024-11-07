@@ -21,7 +21,7 @@ searcher := structs.NewSearcher(
     s,
     structs.WithDelitimter("-"),
 )
-v := searcher.SearchField("TestA.A")
+v := searcher.SearchField("TestA-A")
 v.SetString("aa")
 fmt.Println(s.TestA.A) // should be 'aa'
 ```
