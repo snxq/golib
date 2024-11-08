@@ -38,6 +38,9 @@ func (s *searcher) SearchField(path string) []reflect.Value {
 		vs = s.GetField(field)
 		s.Values = []reflect.Value{}
 		for _, v := range vs {
+			if v.Kind() == 0 {
+				continue
+			}
 			switch v.Kind() {
 			case reflect.Ptr:
 				s.Values = append(s.Values, reflect.Indirect(v))

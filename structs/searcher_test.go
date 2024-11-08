@@ -94,6 +94,15 @@ func Test_searcher_SearchField(t *testing.T) {
 				path: "C.10.A",
 			},
 			want: []string{},
+		}, {
+			name: "8_err_not_found",
+			fields: fields{
+				Origin: TestA{A: "aaa"},
+			},
+			args: args{
+				path: "TestA",
+			},
+			want: []string{},
 		},
 	}
 	for _, tt := range tests {
